@@ -1,10 +1,14 @@
 import './App.css';
+import TaskForm from './components/TaskForm';
 
 function App() {
+
+  const addTask = (task) => {
+    console.log('Task Data = ', task)
+  }
+
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <TaskForm addTask={addTask} />
   );
 }
 
