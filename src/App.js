@@ -11,11 +11,15 @@ function App() {
     setTask(prev => [...prev, task]);
   }
 
+  const onDelete = (id) => {
+    setTask(prev => prev.filter(task => task.id !== id));
+  }
+
   return (
     <div>
       <TaskForm addTask={addTask} />
 
-      <TaskList tasks={task} />
+      <TaskList tasks={task} onDelete={onDelete} />
     </div>
   );
 }
