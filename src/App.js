@@ -35,12 +35,19 @@ function App() {
     );
   };
 
+  const updateTask = (updatedTask) => {
+    setTask(prev => 
+      prev.map(task => 
+        task.id === updatedTask.id ? updatedTask : task
+      )
+    )
+  }
 
   return (
     <div>
       <TaskForm addTask={addTask} />
 
-      <TaskList tasks={task} onDelete={onDelete} onToggle={toggleTaskStatus} />
+      <TaskList tasks={task} onDelete={onDelete} onToggle={toggleTaskStatus} onUpdate={updateTask} />
     </div>
   );
 }
