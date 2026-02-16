@@ -22,11 +22,25 @@ function App() {
     setTask(prev => prev.filter(task => task.id !== id));
   }
 
+  const toggleTaskStatus = (id) => {
+    setTask(prev =>
+      prev.map(task =>
+        task.id === id
+          ? {
+            ...task,
+            status: task.status === 'todo' ? 'completed' : 'todo'
+          }
+          : task
+      )
+    );
+  };
+
+
   return (
     <div>
       <TaskForm addTask={addTask} />
 
-      <TaskList tasks={task} onDelete={onDelete} />
+      <TaskList tasks={task} onDelete={onDelete} onToggle={toggleTaskStatus} />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import TaskItem from './TaskItem';
 
-export default function TaskList({tasks, onDelete}) {
+export default function TaskList({tasks, onDelete, onToggle}) {
 	return (
 		<div className='container'>
 			<h3>Tasks:</h3>
 			{tasks.map(task => (
-				<TaskItem key={task.id} task={task} onDelete={onDelete} />
+				<TaskItem key={task.id} task={task} onDelete={onDelete} onToggle={onToggle} />
 			))}
 		</div>
 	);
