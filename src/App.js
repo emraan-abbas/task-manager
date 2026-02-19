@@ -23,7 +23,12 @@ function App() {
     <div>
       <TaskForm addTask={(task) => dispatch(addTask(task))} />
 
-      <TaskList tasks={tasks} onDelete={(id) => dispatch(deleteTask (id))} onToggle={(id) => dispatch(toggleTaskStatus(id))} onUpdate={(task) => dispatch(updateTask(task))} />
+      <TaskList 
+        tasks={tasks}
+        onDelete={(id) => dispatch(deleteTask (id))} 
+        onToggle={(id) => dispatch(toggleTaskStatus(id))}
+        onUpdate={(task) => dispatch(updateTask(task))}
+      />
     </div>
   );
 }
